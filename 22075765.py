@@ -12,7 +12,7 @@ def read_data(filename):
 
 def calculate_statistics(salaries):
     mean_salary = np.mean(salaries)
-    std_dev = np.std(salaries)
+   
     
     # Calculate X - value such that 10% of people have a salary below X
     x_percentile = np.percentile(salaries, 10)
@@ -26,7 +26,7 @@ def plot_histogram_and_distribution(salaries, mean_salary, x_percentile):
     # Calculate and plot the probability density function
     x = np.linspace(min(salaries), max(salaries), 100)
     pdf = (1 / (np.std(salaries) * np.sqrt(2 * np.pi))) * np.exp(-0.5 * ((x - mean_salary) / np.std(salaries))**2)
-    plt.plot(x, pdf, color='red', linewidth=2, label='PDF')
+    plt.plot(x, pdf, color='red', linewidth=2, label='Probablity Desnsity Function')
 
     # Plot mean and X values on the graph
     plt.axvline(mean_salary, color='green', linestyle='dashed', linewidth=2, label=f'Mean Salary: {mean_salary}')
